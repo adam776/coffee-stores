@@ -3,16 +3,19 @@
 @tailwind utilities;
 
 @layer base {
+  html,
+  body {
+    padding: 0;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+      Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    @apply bg-gradient bg-cover bg-[50%] bg-repeat h-full;
+  }
+
   h1 {
     @apply text-4xl font-bold text-white md:text-5xl lg:text-7xl;
   }
 
-  html, 
-  body {
-    padding: 0;
-    margin: 0;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  }
   a {
     color: inherit;
     text-decoration: none;
@@ -23,7 +26,7 @@
   }
 
   p {
-    @apply text-base font-medium
+    @apply text-base font-medium;
   }
 
   h1,
@@ -39,7 +42,7 @@
   }
 
   button {
-    @apply w-fit cursor-pointer rounded-lg border-0 bg-purple-900 px-6 py-4 text-lg text-white hover:bg-violet-900
+    @apply w-fit cursor-pointer rounded-lg border-0 bg-purple-951 px-6 py-4 text-lg text-white hover:bg-violet-900;
   }
 
   button:focus {
@@ -47,6 +50,18 @@
   }
 
   p {
-    @apply m-0 text-2xl font-bold md:text-3xl
+    @apply m-0 text-2xl font-bold md:text-3xl;
+  }
+}
+
+@layer components {
+  /* glass-morphism */
+  .glass {
+    @apply border border-solid border-[hsla(0,0%,100%,0.2)] bg-gray-951 backdrop-blur-[10px] hover:border hover:border-solid hover:border-white;
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  .glass:hover {
+    @apply bg-gray-950;
   }
 }
